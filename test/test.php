@@ -5,7 +5,7 @@
  $k = substr($a, -$t);
 if(strcmp($k,$b))
 {
-  print "false";
+  print "false123";
 }
 else
 {
