@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<project name="test Project" default="phpcs">
+<project name="test Project" default="phpunit">
   <property name="sitename" value="www.tutorialspoint.com"/>
   <property name="basedir" value="."/>
  <target name="phpcs"
