@@ -3,14 +3,21 @@
   <property name="sitename" value="www.tutorialspoint.com"/>
   <property name="basedir" value="."/>
 
-  <target name="phpunit" depends="process-build-resources-mysqli">
-        <echo>MYSQLI unit tests started</echo>
+  <target name="phpcs"  depends="phpunit"
+         description="Find coding standard violations using PHP_CodeSniffer and print human readable output. Intended for usage on the command line before committing.">
+  <exec executable="phpcs" failonerror="on">
+   <arg value="--standard=${basedir}/build/ruleset.xml" />
+    <arg value="--report=checkstyle" />
+   <arg value="--report-file=${basedir}/build/logs/checkstyle.xml" />
+   <arg path="${basedir}/test" />
+  </exec>
+ </target>
 
-        <exec executable="php" dir="${basedir}/test" failonerror="true" failifexecutionfails="true">
-        </exec>
-
-        <echo>MYSQLI unit tests finished</echo>
-    </target>
+ <target name="phpunit" description="Run unit tests with PHPUnit">
+  <exec executable="phpunit" failonerror="true">
+   <arg path="${basedir}/test" />
+  </exec>
+ </target>
 </project>
 
 
