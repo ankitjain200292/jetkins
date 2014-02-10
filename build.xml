@@ -3,12 +3,7 @@
   <property name="sitename" value="www.tutorialspoint.com"/>
   <property name="basedir" value="."/>
  <target name="phpunit" description="Run unit tests with PHPUnit">
-  <exec executable="phpunit" failonerror="true">
-  <arg path="${basedir}/test" />
-  <arg value="--log-junit 'reports/unitreport.xml"/>
-  <arg value="--coverage-html 'reports/coverage"/>
-  <arg value="--coverage-clover 'reports/coverage/coverage.xml"/>
-  </exec>
+  <exec executable="phpunit" failonerror="true"/>
  </target>
 </project>
 
