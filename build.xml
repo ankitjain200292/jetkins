@@ -2,11 +2,7 @@
 <project name="test Project" default="phpunit">
   <property name="sitename" value="www.tutorialspoint.com"/>
   <property name="basedir" value="."/>
- <target name="phpunit" description="Run unit tests with PHPUnit">
-  <exec executable="phpunit" failonerror="true">
-   <arg path="${basedir}/test" />
-  </exec>
- </target>
+
   <target name="phpunit" depends="process-build-resources-mysqli">
         <echo>MYSQLI unit tests started</echo>
 
