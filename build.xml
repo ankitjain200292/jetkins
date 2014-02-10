@@ -3,8 +3,9 @@
   <property name="sitename" value="www.tutorialspoint.com"/>
   <property name="basedir" value="."/>
  <target name="phpunit" description="Run unit tests with PHPUnit">
-  <exec executable="phpunit" failonerror="true"/>
-  <arg path="${basedir}/test" />
+  <exec executable="${php}" failonerror="true">
+   <arg path="${basedir}/test" />
+  </exec>
  </target>
 </project>
 
