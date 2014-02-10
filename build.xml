@@ -1,20 +1,12 @@
 <?xml version="1.0"?>
-<project name="test Project" default="phpcs">
+<project name="test Project" default="phpunit">
   <property name="sitename" value="www.tutorialspoint.com"/>
   <property name="basedir" value="."/>
-
-  <target name="phpcs"  depends="phpunit"
-         description="Find coding standard violations using PHP_CodeSniffer and print human readable output. Intended for usage on the command line before committing.">
-  <exec executable="phpcs" failonerror="on">
-   <arg value="--standard=${basedir}/build/ruleset.xml" />
-    <arg value="--report=checkstyle" />
-   <arg value="--report-file=${basedir}/build/logs/checkstyle.xml" />
-   <arg path="${basedir}/test" />
-  </exec>
- </target>
-
  <target name="phpunit" description="Run unit tests with PHPUnit">
-  <exec executable="phpunit" failonerror="true">
+ <exec dir="."
+      command="phpunit --log-junit 'build/logs/junit.xml'
+                       test/"
+/>
    <arg path="${basedir}/test" />
   </exec>
  </target>
