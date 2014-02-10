@@ -11,11 +11,6 @@
         <echo>MYSQLI unit tests started</echo>
 
         <exec executable="php" dir="${basedir}/test" failonerror="true" failifexecutionfails="true">
-            <arg line="-d zend_extension=/usr/lib/php5/20090626/xdebug.so
-                       /usr/bin/phpunit
-                       --log-junit ${basedir}/build/logs/junit.xml
-                       --coverage-html ${basedir}/build/coverage
-                       --configuration ${source}/app/phpunit.xml.dist"/>
         </exec>
 
         <echo>MYSQLI unit tests finished</echo>
