@@ -7,8 +7,6 @@
       command="phpunit --log-junit 'build/logs/junit.xml'
                        test/"
 />
-   <arg path="${basedir}/test" />
-  </exec>
  </target>
 </project>
 
